@@ -1,1 +1,94 @@
-Stoppppppppppppppppppppppp
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>توقف</title>
+    <script>
+        
+var text="";
+const fullText = ("توقف عن هذا الان");
+const texts=["stop"];
+for (let i = 1; i <= fullText.length; i++) {
+    text=fullText.slice(0,i);
+    texts.push(text);
+}
+for (let i = fullText.length; i >= 0; i=i-2) {
+    text=fullText.slice(0,i);
+    texts.push(text);
+}
+var i=0,j=0;
+const arrayLen = texts.length;
+function Screen() {
+   setInterval(function () {
+       if (i==arrayLen) {
+           i=0;
+       }
+       text = texts[i++];
+        document.getElementById("text").innerHTML=text;
+   },100)
+   setInterval(function(){
+       if(j==0){
+           document.getElementById("span").style.opacity=0;
+       }
+       if(j==1){
+           document.getElementById("span").style.opacity=0.25;
+       }
+       if(j==2){
+           document.getElementById("span").style.opacity=0.5;
+       }
+       if(j==3){
+           document.getElementById("span").style.opacity=1;
+       }
+       if(j==4){
+           document.getElementById("span").style.opacity=0.5;
+       }
+       if(j==5){
+           document.getElementById("span").style.opacity=0.25;
+       }
+       if (j==6) {
+          document.getElementById("span").style.opacity=0;
+       }{}
+       j++;
+       if (j==7) {
+        j=0;
+       }
+   },100);
+};
+Screen();
+    </script>
+    <style>
+        
+html{
+    background-color: black;
+}
+.container  {
+    text-align: center;
+    margin-top: 100px;
+}
+
+h1{
+    display: inline;
+}
+#text{
+    color: #b0b0f3;
+}
+#span{
+    color: yellow;
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="inner-containt">
+            <h1 id="text"></h1>
+            <h1 id="span">_</h1>
+        </div>
+    </div>
+</body>
+</html>
